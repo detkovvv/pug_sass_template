@@ -7,15 +7,12 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env, argv) => {
-
-  console.log('argv.mode = ' + argv.mode);
-
   const _gParams = {
     FILE_PREFIX: (argv.mode === 'production') ? '/dist/' : '/',
     IMG_PREFIX_URL: (argv.mode === 'production') ? 'https://soarlin.github.io/' : '/'
   };
 
-  var config = {
+  const config = {
     context: path.resolve(__dirname, 'src'),
     entry: {
       index: './js/index.js',
